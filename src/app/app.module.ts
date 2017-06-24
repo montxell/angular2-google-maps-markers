@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AgmCoreModule } from '@agm/core';
 
+import { MapsService } from './services/maps.service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -21,7 +23,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
       apiKey: 'AIzaSyARl6VyKE8_p5e1pmToZLR_xw3CLRvvBOI'
     })
   ],
-  providers: [],
+  providers: [
+    MapsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

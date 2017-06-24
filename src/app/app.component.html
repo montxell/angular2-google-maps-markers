@@ -1,8 +1,39 @@
 
 <app-navbar></app-navbar>
 
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+<div class="container main-container">
 
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <div class="row">
 
-</agm-map>
+
+    <div class="col-md-4">
+
+      <h5>Marker</h5>
+
+    </div>
+
+
+    <div class="col-md-8">
+
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+
+        <agm-marker [latitude]="lat" [longitude]="lng">
+
+          <agm-info-window>
+
+            <strong>Sagrada Familia Basilica</strong>
+            <p>
+              Church designed by Gaudí.
+            </p>
+
+          </agm-info-window>
+
+        </agm-marker>
+
+      </agm-map>
+
+    </div>
+
+  </div>
+
+</div>
