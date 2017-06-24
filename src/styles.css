@@ -2,6 +2,10 @@ body{
   padding-bottom: 200px;
 }
 
+agm-map {
+  height: 600px;
+}
+
 .main-container{
   margin-top: 40px;
   margin-bottom: 150px;
