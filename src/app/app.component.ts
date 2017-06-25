@@ -37,4 +37,23 @@ export class AppComponent {
 
   }
 
+
+  clickMarker( marker: Marker, i: number ) {
+    console.log(marker, i);
+  }
+
+
+  dragEndMarker( marker: Marker, event ) {
+    console.log(marker, event);
+
+    let lat = event.coords.lat;
+    let lng = event.coords.lng;
+
+    marker.lat = lat;
+    marker.lng = lng;
+
+    this._ms.saveMarker();
+
+  }
+
 }
