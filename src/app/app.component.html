@@ -7,7 +7,20 @@
 
     <div class="col-md-4">
 
-      <div *ngIf="selectedMarker">
+      <div *ngIf="!selectedMarker"
+           class="animated fadeIn fast">
+
+        <div class="alert alert-info" role="alert">
+          <strong>Click</strong>
+          on the map to create a marker o select one
+          from the map.
+        </div>
+
+      </div>
+
+
+      <div *ngIf="selectedMarker"
+           class="animated fadeIn fast">
 
         <h5>Marker</h5>
         <hr>
@@ -57,7 +70,7 @@
     </div>
 
 
-    <div class="col-md-8">
+    <div class="col-md-8 animated fadeIn fast">
 
       <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"
                (mapClick)="clickMap($event)">
@@ -78,7 +91,7 @@
             </p>
 
             <p>
-              <a  (click)="_ms.deleteMarker(i)"
+              <a  (click)="_ms.deleteMarker(i); selectedMarker=null"
                   class="text-danger pointer">
                 Delete marker
               </a>
