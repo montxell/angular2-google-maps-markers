@@ -23,4 +23,9 @@ export class MapsService {
 
   }
 
+
+  insertMarker( marker: Marker ) {
+    this.markers.push(marker);
+  }
+
 }

@@ -15,7 +15,8 @@
 
     <div class="col-md-8">
 
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"
+               (mapClick)="clickMap($event)">
 
         <agm-marker *ngFor="let marker of _ms.markers"
                     [latitude]="marker.lat"
@@ -24,7 +25,7 @@
                     [markerDraggable]="marker.draggable">
 
           <agm-info-window>
-            
+
             <strong>{{ marker.title }}</strong>
             <p *ngIf="marker.description">
               {{ marker.description }}
