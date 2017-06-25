@@ -17,13 +17,17 @@
 
       <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
 
-        <agm-marker [latitude]="lat" [longitude]="lng">
+        <agm-marker *ngFor="let marker of _ms.markers"
+                    [latitude]="marker.lat"
+                    [longitude]="marker.lng"
+                    [title]="marker.title"
+                    [markerDraggable]="marker.draggable">
 
           <agm-info-window>
-
-            <strong>Sagrada Familia Basilica</strong>
-            <p>
-              Church designed by Gaudí.
+            
+            <strong>{{ marker.title }}</strong>
+            <p *ngIf="marker.description">
+              {{ marker.description }}
             </p>
 
           </agm-info-window>
