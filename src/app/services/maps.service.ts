@@ -30,6 +30,12 @@ export class MapsService {
   }
 
 
+  deleteMarker( index: number ) {
+    this.markers.splice(index, 1);
+    this.saveMarker();
+  }
+
+
   saveMarker() {
     localStorage.setItem('mapMarkers', JSON.stringify(this.markers));
   }

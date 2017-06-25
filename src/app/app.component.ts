@@ -14,6 +14,8 @@ export class AppComponent {
   lng: number = 2.174310;
   zoom: number = 16;
 
+  selectedMarker: any = null;
+
 
   constructor( public _ms: MapsService ) {
 
@@ -40,6 +42,7 @@ export class AppComponent {
 
   clickMarker( marker: Marker, i: number ) {
     console.log(marker, i);
+    this.selectedMarker = marker;
   }
 
 
