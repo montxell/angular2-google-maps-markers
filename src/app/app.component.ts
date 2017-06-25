@@ -15,7 +15,11 @@ export class AppComponent {
   zoom: number = 16;
 
 
-  constructor( public _ms: MapsService ) {}
+  constructor( public _ms: MapsService ) {
+
+    this._ms.loadMarkers();
+
+  }
 
 
   clickMap( event ) {

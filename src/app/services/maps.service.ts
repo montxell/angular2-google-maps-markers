@@ -26,6 +26,23 @@ export class MapsService {
 
   insertMarker( marker: Marker ) {
     this.markers.push(marker);
+    this.saveMarker();
+  }
+
+
+  saveMarker() {
+    localStorage.setItem('mapMarkers', JSON.stringify(this.markers));
+  }
+
+
+  loadMarkers() {
+
+    if ( localStorage.getItem('mapMarkers') ) {
+      this.markers = JSON.parse(localStorage.getItem('mapMarkers'));
+    } else {
+      this.markers = [];
+    }
+
   }
 
 }
