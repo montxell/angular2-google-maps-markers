@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { MapsService } from './services/maps.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  lat: number = 41.403514; 
+  lat: number = 41.403514;
   lng: number = 2.174310;
   zoom: number = 16;
+
+
+  constructor( public _ms: MapsService ) {}
+
 
 }
